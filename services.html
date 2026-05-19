@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head> 
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - FitPro Wellness</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="wrapper">
+            <a href="index.html" class="logo">FitPro<span>Wellness</span></a>
+            <nav>
+                <a href="index.html" data-pt="Home" data-en="Home">Home</a>
+                <a href="about.html" data-pt="Sobre" data-en="About">Sobre</a>
+                <a href="services.html" data-pt="Serviços" data-en="Services">Serviços</a>
+                <a href="shop.html" data-pt="Loja" data-en="Shop">Loja</a>
+                <a href="contact.html" data-pt="Contato" data-en="Contact">Contato</a>
+                <button id="lang-btn" onclick="toggleLang()">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="wrapper">
+            <h1 data-pt="Serviços" data-en="Services">Serviços</h1>
+            <p data-pt="Escolha o plano ideal para os seus objetivos" data-en="Choose the ideal plan for your goals">Escolha o plano ideal para os seus objetivos</p>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS (carregados via JSON) -->
+    <section>
+        <div class="wrapper">
+            <div id="services-container" class="cards-grid">
+                <!-- Os cards são gerados pelo JavaScript -->
+                <p style="color:#aaa;" data-pt="Carregando serviços..." data-en="Loading services...">Carregando serviços...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-dark">
+        <div class="wrapper" style="text-align:center;">
+            <h2 data-pt="Pronto para começar?" data-en="Ready to get started?">Pronto para começar?</h2>
+            <p style="margin-bottom:30px;" data-pt="Entre em contato e dê o primeiro passo." data-en="Get in touch and take the first step.">Entre em contato e dê o primeiro passo.</p>
+            <a href="contact.html" class="btn" data-pt="Falar com a Luana" data-en="Talk to Luana">Falar com a Luana</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrapper">
+            <p data-pt="© 2026 FitPro Wellness — Luana Zen. Todos os direitos reservados." data-en="© 2026 FitPro Wellness — Luana Zen. All rights reserved.">&copy; 2026 <span>FitPro Wellness</span> — Luana Zen. Todos os direitos reservados.</p>
+            <p style="margin-top: 8px;">Instagram: <a href="https://instagram.com/luanazen" target="_blank"><span>@luanazen</span></a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Carrega os serviços do JSON
+        let currentLang = localStorage.getItem('lang') || 'pt';
+
+        function loadServices(lang) {
+            $.getJSON('data/services.json', function(services) {
+                $('#services-container').empty();
+                services.forEach(function(s) {
+                    const titulo = lang === 'en' ? s.title : s.titulo;
+                    const descricao = lang === 'en' ? s.description : s.descricao;
+                    const periodo = lang === 'en' ? s.periodo_en : s.periodo_pt;
+                    const btnText = lang === 'en' ? 'Book Now' : 'Marcar Agora';
+                    const destaque = s.destaque ? 'featured-card' : '';
+
+                    $('#services-container').append(`
+                        <div class="card ${destaque}">
+                            <h3>${titulo}</h3>
+                            <p>${descricao}</p>
+                            <p class="price">${s.preco} <small>${periodo}</small></p>
+                            <a href="contact.html" class="btn">${btnText}</a>
+                        </div>
+                    `);
+                });
+            });
+        }
+
+        loadServices(currentLang);
+
+        function toggleLang() {
+            const btn = document.getElementById('lang-btn');
+            const lang = btn.innerText === 'EN' ? 'en' : 'pt';
+
+            document.querySelectorAll('[data-pt]').forEach(el => {
+                el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.pt;
+            });
+
+            btn.innerText = lang === 'en' ? 'PT' : 'EN';
+            localStorage.setItem('lang', lang);
+            currentLang = lang;
+            loadServices(lang);
+        }
+
+        if (currentLang === 'en') toggleLang();
+    </script>
+
+</body>
+</html>

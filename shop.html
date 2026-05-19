@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja - FitPro Wellness</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="wrapper">
+            <a href="index.html" class="logo">FitPro<span>Wellness</span></a>
+            <nav>
+                <a href="index.html" data-pt="Home" data-en="Home">Home</a>
+                <a href="about.html" data-pt="Sobre" data-en="About">Sobre</a>
+                <a href="services.html" data-pt="Serviços" data-en="Services">Serviços</a>
+                <a href="shop.html" data-pt="Loja" data-en="Shop">Loja</a>
+                <a href="contact.html" data-pt="Contato" data-en="Contact">Contato</a>
+                <button id="lang-btn" onclick="toggleLang()">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="wrapper">
+            <h1 data-pt="Loja" data-en="Shop">Loja</h1>
+            <p data-pt="Ebooks e receitas fit para transformar a sua alimentação" data-en="Ebooks and fit recipes to transform your nutrition">Ebooks e receitas fit para transformar a sua alimentação</p>
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section>
+        <div class="wrapper">
+            <div class="section-title">
+                <h2 data-pt="Produtos Digitais" data-en="Digital Products">Produtos Digitais</h2>
+                <p data-pt="Acesso imediato após a compra" data-en="Immediate access after purchase">Acesso imediato após a compra</p>
+            </div>
+            <div class="cards-grid">
+
+                <div class="card shop-card">
+                    <div class="shop-card-img">
+                        <img src="images/ebook1.jpg" alt="Ebook Guia de Hipertrofia - FitPro Wellness">
+                    </div>
+                    <div class="shop-card-body">
+                        <span class="product-tag" data-pt="Ebook" data-en="Ebook">Ebook</span>
+                        <h3 data-pt="Guia de Hipertrofia" data-en="Hypertrophy Guide">Guia de Hipertrofia</h3>
+                        <p data-pt="Tudo o que precisa saber para ganhar massa muscular com ciência e estratégia." data-en="Everything you need to know to build muscle mass with science and strategy.">Tudo o que precisa saber para ganhar massa muscular com ciência e estratégia.</p>
+                        <p class="price">19,90€</p>
+                        <a href="contact.html" class="btn" data-pt="Comprar Agora" data-en="Buy Now">Comprar Agora</a>
+                    </div>
+                </div>
+
+                <div class="card shop-card">
+                    <div class="shop-card-img">
+                        <img src="images/ebook2.jpg" alt="Ebook Receitas Fit - FitPro Wellness">
+                    </div>
+                    <div class="shop-card-body">
+                        <span class="product-tag" data-pt="Receitas" data-en="Recipes">Receitas</span>
+                        <h3 data-pt="Receitas Fit" data-en="Fit Recipes">Receitas Fit</h3>
+                        <p data-pt="50 receitas saudáveis e deliciosas para o dia a dia — fáceis e rápidas de preparar." data-en="50 healthy and delicious everyday recipes — easy and quick to prepare.">50 receitas saudáveis e deliciosas para o dia a dia — fáceis e rápidas de preparar.</p>
+                        <p class="price">14,90€</p>
+                        <a href="contact.html" class="btn" data-pt="Comprar Agora" data-en="Buy Now">Comprar Agora</a>
+                    </div>
+                </div>
+
+                <div class="card shop-card">
+                    <div class="shop-card-img">
+                        <img src="images/ebook3.jpg" alt="Ebook Nutrição Esportiva - FitPro Wellness">
+                    </div>
+                    <div class="shop-card-body">
+                        <span class="product-tag" data-pt="Ebook" data-en="Ebook">Ebook</span>
+                        <h3 data-pt="Nutrição Esportiva" data-en="Sports Nutrition">Nutrição Esportiva</h3>
+                        <p data-pt="Guia completo de nutrição para atletas e praticantes de atividade física." data-en="Complete nutrition guide for athletes and fitness enthusiasts.">Guia completo de nutrição para atletas e praticantes de atividade física.</p>
+                        <p class="price">24,90€</p>
+                        <a href="contact.html" class="btn" data-pt="Comprar Agora" data-en="Buy Now">Comprar Agora</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrapper">
+            <p data-pt="© 2026 FitPro Wellness — Luana Zen. Todos os direitos reservados." data-en="© 2026 FitPro Wellness — Luana Zen. All rights reserved.">&copy; 2026 <span>FitPro Wellness</span> — Luana Zen. Todos os direitos reservados.</p>
+            <p style="margin-top: 8px;">Instagram: <a href="https://instagram.com/luanazen" target="_blank"><span>@luanazen</span></a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function toggleLang() {
+            const btn = document.getElementById('lang-btn');
+            const lang = btn.innerText === 'EN' ? 'en' : 'pt';
+
+            document.querySelectorAll('[data-pt]').forEach(el => {
+                el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.pt;
+            });
+
+            btn.innerText = lang === 'en' ? 'PT' : 'EN';
+            localStorage.setItem('lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang === 'en') toggleLang();
+    </script>
+
+</body>
+</html>

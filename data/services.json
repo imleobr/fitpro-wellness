@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "titulo": "Personal Presencial",
+        "title": "In-Person Training",
+        "descricao": "Sessão individual com acompanhamento direto da Luana. Treino personalizado de acordo com os seus objetivos.",
+        "description": "Individual session with direct coaching from Luana. Personalized training according to your goals.",
+        "preco": "35€",
+        "periodo_pt": "por hora",
+        "periodo_en": "per hour",
+        "destaque": false
+    },
+    {
+        "id": 2,
+        "titulo": "Consultoria Online",
+        "title": "Online Coaching",
+        "descricao": "3 meses de acompanhamento completo — treino, nutrição e suporte contínuo onde quer que esteja.",
+        "description": "3 months of full coaching — training, nutrition and ongoing support wherever you are.",
+        "preco": "350€",
+        "periodo_pt": "por 3 meses",
+        "periodo_en": "for 3 months",
+        "destaque": true
+    },
+    {
+        "id": 3,
+        "titulo": "Plano de Treino",
+        "title": "Training Plan",
+        "descricao": "Plano de treino montado especificamente para você, com exercícios, séries e cargas detalhadas.",
+        "description": "Training plan built specifically for you, with detailed exercises, sets and loads.",
+        "preco": "80€",
+        "periodo_pt": "único",
+        "periodo_en": "one-time",
+        "destaque": false
+    },
+    {
+        "id": 4,
+        "titulo": "Plano Nutricional",
+        "title": "Nutrition Plan",
+        "descricao": "Plano alimentar estratégico baseado nos seus objetivos, rotina e preferências alimentares.",
+        "description": "Strategic nutrition plan based on your goals, routine and food preferences.",
+        "preco": "80€",
+        "periodo_pt": "único",
+        "periodo_en": "one-time",
+        "destaque": false
+    }
+]

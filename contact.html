@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - FitPro Wellness</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="wrapper">
+            <a href="index.html" class="logo">FitPro<span>Wellness</span></a>
+            <nav>
+                <a href="index.html" data-pt="Home" data-en="Home">Home</a>
+                <a href="about.html" data-pt="Sobre" data-en="About">Sobre</a>
+                <a href="services.html" data-pt="Serviços" data-en="Services">Serviços</a>
+                <a href="shop.html" data-pt="Loja" data-en="Shop">Loja</a>
+                <a href="contact.html" data-pt="Contato" data-en="Contact">Contato</a>
+                <button id="lang-btn" onclick="toggleLang()">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="wrapper">
+            <h1 data-pt="Contato" data-en="Contact">Contato</h1>
+            <p data-pt="Agende uma sessão ou tire suas dúvidas" data-en="Book a session or get in touch">Agende uma sessão ou tire suas dúvidas</p>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO -->
+    <section>
+        <div class="wrapper">
+            <div class="contact-grid">
+
+                <!-- FORM -->
+                <div class="contact-form">
+                    <h2 data-pt="Envie uma mensagem" data-en="Send a message">Envie uma mensagem</h2>
+
+                    <!-- 
+                        IMPORTANTE: Substitua o ACTION abaixo pelo seu endpoint do Formspree.
+                        1. Acesse https://formspree.io
+                        2. Crie uma conta gratuita
+                        3. Crie um novo form e copie o endpoint (ex: https://formspree.io/f/xxxxxxxx)
+                        4. Cole no lugar do # abaixo
+                    -->
+                    <form action="https://formspree.io/f/mgoqoolq" method="POST" id="contact-form">
+
+                        <div class="form-group">
+                            <label for="name" data-pt="Nome completo *" data-en="Full name *">Nome completo *</label>
+                            <input type="text" id="name" name="name" required
+                                data-pt-placeholder="O seu nome"
+                                data-en-placeholder="Your name"
+                                placeholder="O seu nome">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" data-pt="Email *" data-en="Email *">Email *</label>
+                            <input type="email" id="email" name="email" required
+                                data-pt-placeholder="O seu email"
+                                data-en-placeholder="Your email"
+                                placeholder="O seu email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" data-pt="Telefone / WhatsApp" data-en="Phone / WhatsApp">Telefone / WhatsApp</label>
+                            <input type="tel" id="phone" name="phone"
+                                data-pt-placeholder="O seu número"
+                                data-en-placeholder="Your number"
+                                placeholder="O seu número">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service" data-pt="Serviço de interesse *" data-en="Service of interest *">Serviço de interesse *</label>
+                            <select id="service" name="service" required>
+                                <option value="" data-pt="Selecione um serviço" data-en="Select a service">Selecione um serviço</option>
+                                <option value="presencial" data-pt="Personal Presencial (35€/hora)" data-en="In-Person Training (35€/hour)">Personal Presencial (35€/hora)</option>
+                                <option value="online" data-pt="Consultoria Online (350€/3 meses)" data-en="Online Coaching (350€/3 months)">Consultoria Online (350€/3 meses)</option>
+                                <option value="plano-treino" data-pt="Plano de Treino (80€)" data-en="Training Plan (80€)">Plano de Treino (80€)</option>
+                                <option value="plano-nutricional" data-pt="Plano Nutricional (80€)" data-en="Nutrition Plan (80€)">Plano Nutricional (80€)</option>
+                                <option value="ebook" data-pt="Ebook / Receitas" data-en="Ebook / Recipes">Ebook / Receitas</option>
+                                <option value="outro" data-pt="Outro" data-en="Other">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" data-pt="Mensagem *" data-en="Message *">Mensagem *</label>
+                            <textarea id="message" name="message" rows="5" required
+                                data-pt-placeholder="Conte-nos sobre os seus objetivos..."
+                                data-en-placeholder="Tell us about your goals..."
+                                placeholder="Conte-nos sobre os seus objetivos..."></textarea>
+                        </div>
+
+                        <!-- Campo hidden para redirecionar para a página de confirmação -->
+                        <input type="hidden" name="_next" value="confirmation.html">
+
+                        <button type="submit" class="btn" id="submit-btn"
+                            data-pt="Enviar Mensagem"
+                            data-en="Send Message">Enviar Mensagem</button>
+
+                    </form>
+                </div>
+
+                <!-- INFO DE CONTATO -->
+                <div class="contact-info">
+                    <h2 data-pt="Informações" data-en="Information">Informações</h2>
+
+                    <div class="info-item">
+                        <h3 data-pt="Instagram" data-en="Instagram">Instagram</h3>
+                        <p><a href="https://instagram.com/luanazen" target="_blank">@luanazen</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3 data-pt="Atendimento" data-en="Hours">Atendimento</h3>
+                        <p data-pt="Segunda a Sexta: 8h — 20h" data-en="Monday to Friday: 8am — 8pm">Segunda a Sexta: 8h — 20h</p>
+                        <p data-pt="Sábado: 9h — 14h" data-en="Saturday: 9am — 2pm">Sábado: 9h — 14h</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3 data-pt="Resposta" data-en="Response time">Resposta</h3>
+                        <p data-pt="Respondemos em até 24 horas." data-en="We respond within 24 hours.">Respondemos em até 24 horas.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrapper">
+            <p data-pt="© 2026 FitPro Wellness — Luana Zen. Todos os direitos reservados." data-en="© 2026 FitPro Wellness — Luana Zen. All rights reserved.">&copy; 2026 <span>FitPro Wellness</span> — Luana Zen. Todos os direitos reservados.</p>
+            <p style="margin-top: 8px;">Instagram: <a href="https://instagram.com/luanazen" target="_blank"><span>@luanazen</span></a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function toggleLang() {
+            const btn = document.getElementById('lang-btn');
+            const lang = btn.innerText === 'EN' ? 'en' : 'pt';
+
+            // Troca textos normais
+            document.querySelectorAll('[data-pt]').forEach(el => {
+                el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.pt;
+            });
+
+            // Troca placeholders
+            document.querySelectorAll('[data-pt-placeholder]').forEach(el => {
+                el.placeholder = lang === 'en' ? el.dataset.enPlaceholder : el.dataset.ptPlaceholder;
+            });
+
+            btn.innerText = lang === 'en' ? 'PT' : 'EN';
+            localStorage.setItem('lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang === 'en') toggleLang();
+
+        // Validação do formulário com jQuery
+        $('#contact-form').on('submit', function(e) {
+            const name = $('#name').val().trim();
+            const email = $('#email').val().trim();
+            const message = $('#message').val().trim();
+            const lang = localStorage.getItem('lang') || 'pt';
+
+            if (!name || !email || !message) {
+                e.preventDefault();
+                const msg = lang === 'en'
+                    ? 'Please fill in all required fields.'
+                    : 'Por favor preencha todos os campos obrigatórios.';
+                alert(msg);
+            }
+        });
+    </script>
+
+</body>
+</html>

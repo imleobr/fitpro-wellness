@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem Enviada - FitPro Wellness</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="wrapper">
+            <a href="index.html" class="logo">FitPro<span>Wellness</span></a>
+            <nav>
+                <a href="index.html" data-pt="Home" data-en="Home">Home</a>
+                <a href="about.html" data-pt="Sobre" data-en="About">Sobre</a>
+                <a href="services.html" data-pt="Serviços" data-en="Services">Serviços</a>
+                <a href="shop.html" data-pt="Loja" data-en="Shop">Loja</a>
+                <a href="contact.html" data-pt="Contato" data-en="Contact">Contato</a>
+                <button id="lang-btn" onclick="toggleLang()">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONFIRMAÇÃO -->
+    <section class="confirmation-section">
+        <div class="wrapper">
+            <div class="confirmation-box">
+                <div class="confirmation-icon">✓</div>
+                <h1 data-pt="Mensagem Enviada!" data-en="Message Sent!">Mensagem Enviada!</h1>
+                <p data-pt="Obrigado pelo seu contato. A Luana vai responder em até 24 horas." data-en="Thank you for reaching out. Luana will get back to you within 24 hours.">Obrigado pelo seu contato. A Luana vai responder em até 24 horas.</p>
+                <p data-pt="Enquanto isso, siga a Luana no Instagram para dicas diárias de treino e nutrição." data-en="In the meantime, follow Luana on Instagram for daily training and nutrition tips.">Enquanto isso, siga a Luana no Instagram para dicas diárias de treino e nutrição.</p>
+                <div class="confirmation-btns">
+                    <a href="index.html" class="btn" data-pt="Voltar ao Início" data-en="Back to Home">Voltar ao Início</a>
+                    <a href="https://instagram.com/luanazen" target="_blank" class="btn btn-outline" data-pt="Ver Instagram" data-en="View Instagram">Ver Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrapper">
+            <p data-pt="© 2026 FitPro Wellness — Luana Zen. Todos os direitos reservados." data-en="© 2026 FitPro Wellness — Luana Zen. All rights reserved.">&copy; 2026 <span>FitPro Wellness</span> — Luana Zen. Todos os direitos reservados.</p>
+            <p style="margin-top: 8px;">Instagram: <a href="https://instagram.com/luanazen" target="_blank"><span>@luanazen</span></a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function toggleLang() {
+            const btn = document.getElementById('lang-btn');
+            const lang = btn.innerText === 'EN' ? 'en' : 'pt';
+
+            document.querySelectorAll('[data-pt]').forEach(el => {
+                el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.pt;
+            });
+
+            btn.innerText = lang === 'en' ? 'PT' : 'EN';
+            localStorage.setItem('lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang === 'en') toggleLang();
+    </script>
+
+</body>
+</html>

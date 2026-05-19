@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPro Wellness - Luana Zen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="wrapper">
+            <a href="index.html" class="logo">FitPro<span>Wellness</span></a>
+            <nav>
+                <a href="index.html" data-pt="Home" data-en="Home">Home</a>
+                <a href="about.html" data-pt="Sobre" data-en="About">Sobre</a>
+                <a href="services.html" data-pt="Serviços" data-en="Services">Serviços</a>
+                <a href="shop.html" data-pt="Loja" data-en="Shop">Loja</a>
+                <a href="contact.html" data-pt="Contato" data-en="Contact">Contato</a>
+                <button id="lang-btn" onclick="toggleLang()">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="wrapper">
+            <div class="hero-content">
+                <p class="hero-tag" data-pt="Personal Trainer & Nutrição Esportiva" data-en="Personal Trainer & Sports Nutrition">Personal Trainer & Nutrição Esportiva</p>
+                <h1 data-pt="Transforma o teu <span>corpo</span> e a tua <span>mente</span>" data-en="Transform your <span>body</span> and your <span>mind</span>">Transforma o teu <span>corpo</span> e a tua <span>mente</span></h1>
+                <p class="hero-sub" data-pt="Treino presencial e acompanhamento online com quem realmente entende do assunto." data-en="In-person training and online coaching with someone who truly knows their craft.">Treino presencial e acompanhamento online com quem realmente entende do assunto.</p>
+                <div class="hero-btns">
+                    <a href="contact.html" class="btn" data-pt="Marcar Sessão" data-en="Book a Session">Marcar Sessão</a>
+                    <a href="services.html" class="btn btn-outline" data-pt="Ver Serviços" data-en="View Services">Ver Serviços</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTAQUES -->
+    <section class="highlights">
+        <div class="wrapper">
+            <div class="section-title">
+                <h2 data-pt="Por que escolher a Luana Zen?" data-en="Why choose Luana Zen?">Por que escolher a Luana Zen?</h2>
+                <p class="section-subtitle" data-pt="Resultados reais com método e dedicação" data-en="Real results with method and dedication">Resultados reais com método e dedicação</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3 data-pt="Treino Personalizado" data-en="Personalized Training">Treino Personalizado</h3>
+                    <p data-pt="Cada aluno é único. O plano de treino é montado de acordo com os seus objetivos, limitações e rotina." data-en="Every student is unique. The training plan is built around your goals, limitations and lifestyle.">Cada aluno é único. O plano de treino é montado de acordo com os seus objetivos, limitações e rotina.</p>
+                </div>
+                <div class="card">
+                    <h3 data-pt="Nutrição Esportiva" data-en="Sports Nutrition">Nutrição Esportiva</h3>
+                    <p data-pt="Alimentação estratégica para potencializar os resultados dentro e fora da academia." data-en="Strategic nutrition to maximize your results inside and outside the gym.">Alimentação estratégica para potencializar os resultados dentro e fora da academia.</p>
+                </div>
+                <div class="card">
+                    <h3 data-pt="Acompanhamento Online" data-en="Online Coaching">Acompanhamento Online</h3>
+                    <p data-pt="Não importa onde você esteja — o suporte e a orientação chegam até você." data-en="No matter where you are — support and guidance come to you.">Não importa onde você esteja — o suporte e a orientação chegam até você.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREÇOS -->
+    <section class="pricing-preview section-dark">
+        <div class="wrapper">
+            <div class="section-title">
+                <h2 data-pt="Planos e Preços" data-en="Plans & Pricing">Planos e Preços</h2>
+                <p class="section-subtitle" data-pt="Investa em você" data-en="Invest in yourself">Investa em você</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3 data-pt="Personal Presencial" data-en="In-Person Training">Personal Presencial</h3>
+                    <p data-pt="Sessão individual com acompanhamento direto da Luana." data-en="Individual session with direct coaching from Luana.">Sessão individual com acompanhamento direto da Luana.</p>
+                    <p class="price">35€ <small data-pt="/hora" data-en="/hour">/hora</small></p>
+                    <a href="contact.html" class="btn" data-pt="Marcar Agora" data-en="Book Now">Marcar Agora</a>
+                </div>
+                <div class="card featured-card">
+                    <h3 data-pt="Consultoria Online" data-en="Online Coaching">Consultoria Online</h3>
+                    <p data-pt="3 meses de acompanhamento completo — treino, nutrição e suporte contínuo." data-en="3 months of full coaching — training, nutrition and ongoing support.">3 meses de acompanhamento completo — treino, nutrição e suporte contínuo.</p>
+                    <p class="price">350€ <small data-pt="/3 meses" data-en="/3 months">/3 meses</small></p>
+                    <a href="contact.html" class="btn" data-pt="Começar Agora" data-en="Start Now">Começar Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrapper">
+            <p data-pt="© 2026 FitPro Wellness — Luana Zen. Todos os direitos reservados." data-en="© 2026 FitPro Wellness — Luana Zen. All rights reserved.">&copy; 2026 <span>FitPro Wellness</span> — Luana Zen. Todos os direitos reservados.</p>
+            <p style="margin-top: 8px;">Instagram: <a href="https://instagram.com/luanazen" target="_blank"><span>@luanazen</span></a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <script>
+        function toggleLang() {
+            const btn = document.getElementById('lang-btn');
+            const lang = btn.innerText === 'EN' ? 'en' : 'pt';
+
+            document.querySelectorAll('[data-pt]').forEach(el => {
+                if (lang === 'en') {
+                    el.innerHTML = el.dataset.en;
+                } else {
+                    el.innerHTML = el.dataset.pt;
+                }
+            });
+
+            btn.innerText = lang === 'en' ? 'PT' : 'EN';
+            localStorage.setItem('lang', lang);
+        }
+
+        // Lembra o idioma escolhido
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang === 'en') toggleLang();
+    </script>
+
+</body>
+</html>

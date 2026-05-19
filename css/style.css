@@ -1,0 +1,528 @@
+/* ===== RESET E BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    min-height: 100vh;
+}
+
+/* ===== WRAPPER ===== */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: #111111;
+    border-bottom: 2px solid #F5C518;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: #F5C518;
+    font-size: 22px;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+header .logo span {
+    color: #ffffff;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #F5C518;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #111111;
+    border-top: 2px solid #F5C518;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    color: #888888;
+    font-size: 13px;
+}
+
+footer span {
+    color: #F5C518;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+    display: inline-block;
+    background-color: #F5C518;
+    color: #0a0a0a;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #F5C518;
+    color: #F5C518;
+}
+
+.btn-outline:hover {
+    background-color: #F5C518;
+    color: #0a0a0a;
+}
+
+/* ===== SEÇÕES ===== */
+section {
+    padding: 70px 0;
+}
+
+section h2 {
+    font-size: 36px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+section h2 span {
+    color: #F5C518;
+}
+
+.section-subtitle {
+    color: #888888;
+    margin-bottom: 50px;
+    font-size: 15px;
+}
+
+/* ===== CARDS ===== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 35px;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.card:hover {
+    border-color: #F5C518;
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: #F5C518;
+}
+
+.card p {
+    color: #aaaaaa;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.card .price {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 20px 0 5px;
+}
+
+.card .price-detail {
+    color: #888888;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+/* ===========================
+   BOTÃO DE IDIOMA
+=========================== */
+#lang-btn {
+    background: transparent;
+    border: 2px solid #F5C518;
+    color: #F5C518;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-left: 25px;
+    transition: all 0.3s;
+}
+
+#lang-btn:hover {
+    background-color: #F5C518;
+    color: #0a0a0a;
+}
+/* ===========================
+   PAGE HERO
+=========================== */
+.page-hero {
+    background: linear-gradient(135deg, #0a0a0a 60%, #1a1200 100%);
+    padding: 80px 0;
+    text-align: center;
+    border-bottom: 2px solid #F5C518;
+}
+
+.page-hero h1 span {
+    color: #F5C518;
+}
+
+.page-hero p {
+    color: #aaaaaa;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* ===========================
+   ABOUT GRID
+=========================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text h2 span {
+    color: #F5C518;
+}
+
+.image-placeholder {
+    background-color: #1a1a1a;
+    border: 2px dashed #F5C518;
+    border-radius: 8px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #aaaaaa;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ===========================
+   GALLERY
+=========================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid #2a2a2a;
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+    border-color: #F5C518;
+}
+/* ===========================
+   CARDS GRID E FEATURED
+=========================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.featured-card {
+    border-top: 3px solid #F5C518;
+    background-color: #1a1200;
+    position: relative;
+}
+
+.featured-card::before {
+    content: "★ Mais Popular";
+    background-color: #F5C518;
+    color: #0a0a0a;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 4px 12px;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.price {
+    font-size: 32px;
+    font-weight: 900;
+    color: #F5C518;
+    margin: 15px 0;
+}
+
+.price small {
+    font-size: 14px;
+    color: #aaaaaa;
+    font-weight: 400;
+}
+/* ===========================
+   SHOP CARDS
+=========================== */
+.shop-card {
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+}
+
+.shop-card-img {
+    width: 100%;
+    background-color: #1a1a1a;
+    overflow: hidden;
+}
+
+.shop-card-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.shop-card:hover .shop-card-img img {
+    transform: scale(1.05);
+}
+
+.shop-card-body {
+    padding: 25px;
+}
+
+.product-tag {
+    background-color: #F5C518;
+    color: #0a0a0a;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 3px 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.shop-card-body h3 {
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+.shop-card-body p {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+/* ===========================
+   CONTACT
+=========================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-form h2,
+.contact-info h2 {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #F5C518;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    background-color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 12px 15px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #F5C518;
+}
+
+.form-group select option {
+    background-color: #1a1a1a;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.info-item {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item h3 {
+    margin-bottom: 8px;
+}
+
+.info-item a {
+    color: #F5C518;
+    text-decoration: none;
+}
+/* ===========================
+   CONFIRMATION
+=========================== */
+.confirmation-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a0a0a 60%, #1a1200 100%);
+}
+
+.confirmation-box {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background-color: #111111;
+    border: 1px solid #2a2a2a;
+    border-top: 4px solid #F5C518;
+}
+
+.confirmation-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #F5C518;
+    color: #0a0a0a;
+    font-size: 40px;
+    font-weight: 900;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+}
+
+.confirmation-box h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.confirmation-box p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.confirmation-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+/* ===========================
+   ANIMAÇÕES
+=========================== */
+.card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===========================
+   HEADER SCROLLED
+=========================== */
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 2px 20px rgba(245, 197, 24, 0.1);
+}
+
+/* ===========================
+   MENU LINK ATIVO
+=========================== */
+nav a.active {
+    color: #F5C518;
+    border-bottom: 2px solid #F5C518;
+    padding-bottom: 2px;
+}
+/* ===========================
+   ABOUT IMAGE
+=========================== */
+.about-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: top;
+    border: 3px solid #F5C518;
+}
