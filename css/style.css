@@ -146,6 +146,8 @@ section h2 span {
     border-radius: 8px;
     padding: 35px;
     transition: border-color 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .card h3 {
@@ -291,6 +293,10 @@ section h2 span {
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
+}
+
+.card .btn {
+    margin-top: auto;
 }
 
 .price {
