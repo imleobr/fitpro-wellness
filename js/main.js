@@ -4,6 +4,18 @@
 
 $(document).ready(function() {
 
+    // MENU HAMBÚRGUER
+$('#hamburger').on('click', function() {
+    $(this).toggleClass('active');
+    $('nav').toggleClass('open');
+});
+
+// Fecha o menu ao clicar num link
+$('nav a').on('click', function() {
+    $('#hamburger').removeClass('active');
+    $('nav').removeClass('open');
+});
+
     // ===========================
     // MENU ATIVO
     // Marca o link do menu atual como ativo
