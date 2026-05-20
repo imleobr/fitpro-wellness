@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - FitPro Wellness</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="wrapper">
+            <a href="index.html" class="logo">FitPro<span>Wellness</span></a>
+            <nav>
+                <a href="index.html" data-pt="Home" data-en="Home">Home</a>
+                <a href="about.html" data-pt="Sobre" data-en="About">Sobre</a>
+                <a href="services.html" data-pt="Serviços" data-en="Services">Serviços</a>
+                <a href="shop.html" data-pt="Loja" data-en="Shop">Loja</a>
+                <a href="contact.html" data-pt="Contato" data-en="Contact">Contato</a>
+                <a href="cart.html" class="cart-link" title="Carrinho" aria-label="Carrinho">
+                    &#128722;
+                    <span class="cart-badge">0</span>
+                </a>
+                <button id="lang-btn" onclick="toggleLang()">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="wrapper">
+            <h1 data-pt="Meu Carrinho" data-en="My Cart">Meu <span>Carrinho</span></h1>
+            <p data-pt="Reveja o seu pedido e finalize a compra" data-en="Review your order and complete your purchase">Reveja o seu pedido e finalize a compra</p>
+        </div>
+    </section>
+
+    <!-- CART CONTENT -->
+    <section>
+        <div class="wrapper">
+
+            <!-- Carrinho vazio -->
+            <div id="cart-empty" class="cart-empty" style="display:none;">
+                <h3 data-pt="O seu carrinho está vazio" data-en="Your cart is empty">O seu carrinho está vazio</h3>
+                <p data-pt="Adicione produtos da loja para continuar." data-en="Add products from the shop to continue." style="margin-bottom:25px;">Adicione produtos da loja para continuar.</p>
+                <a href="shop.html" class="btn" data-pt="Ver Produtos" data-en="View Products">Ver Produtos</a>
+            </div>
+
+            <!-- Carrinho com itens -->
+            <div id="cart-content" class="cart-page" style="display:none;">
+
+                <!-- Lista de itens -->
+                <div class="cart-items" id="cart-items-list">
+                    <!-- itens injetados via JS -->
+                </div>
+
+                <!-- Resumo do pedido -->
+                <div class="cart-summary">
+                    <h3 data-pt="Resumo do Pedido" data-en="Order Summary">Resumo do Pedido</h3>
+
+                    <div class="cart-summary-row">
+                        <span data-pt="Subtotal" data-en="Subtotal">Subtotal</span>
+                        <span id="summary-subtotal">0,00€</span>
+                    </div>
+                    <div class="cart-summary-row">
+                        <span data-pt="Entrega digital" data-en="Digital delivery">Entrega digital</span>
+                        <span data-pt="Grátis" data-en="Free" style="color:#F5C518; font-weight:700;">Grátis</span>
+                    </div>
+
+                    <div class="cart-summary-total">
+                        <span data-pt="Total" data-en="Total">Total</span>
+                        <span id="summary-total">0,00€</span>
+                    </div>
+
+                    <div class="checkout-note">
+                        <strong data-pt="Como funciona:" data-en="How it works:">Como funciona:</strong>
+                        <span data-pt=" Ao finalizar, abrimos o WhatsApp com o seu pedido. Confirme o pagamento por lá e receba os ebooks no seu email." data-en=" When you check out, we open WhatsApp with your order. Confirm payment there and receive the ebooks by email."> Ao finalizar, abrimos o WhatsApp com o seu pedido. Confirme o pagamento por lá e receba os ebooks no seu email.</span>
+                    </div>
+
+                    <!-- Form do cliente -->
+                    <div class="form-group">
+                        <label for="customer-name" data-pt="Nome completo *" data-en="Full name *">Nome completo *</label>
+                        <input type="text" id="customer-name" required
+                            data-pt-placeholder="O seu nome"
+                            data-en-placeholder="Your name"
+                            placeholder="O seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-email" data-pt="Email *" data-en="Email *">Email *</label>
+                        <input type="email" id="customer-email" required
+                            data-pt-placeholder="email@exemplo.com"
+                            data-en-placeholder="email@example.com"
+                            placeholder="email@exemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-phone" data-pt="Telefone (opcional)" data-en="Phone (optional)">Telefone (opcional)</label>
+                        <input type="tel" id="customer-phone"
+                            data-pt-placeholder="O seu número"
+                            data-en-placeholder="Your number"
+                            placeholder="O seu número">
+                    </div>
+
+                    <button type="button" class="btn" id="checkout-btn"
+                        data-pt="Finalizar via WhatsApp"
+                        data-en="Checkout via WhatsApp">Finalizar via WhatsApp</button>
+
+                    <a href="shop.html" class="btn-back" data-pt="&larr; Continuar comprando" data-en="&larr; Keep shopping">&larr; Continuar comprando</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrapper">
+            <p data-pt="© 2026 FitPro Wellness — Luana Zen. Todos os direitos reservados." data-en="© 2026 FitPro Wellness — Luana Zen. All rights reserved.">&copy; 2026 <span>FitPro Wellness</span> — Luana Zen. Todos os direitos reservados.</p>
+            <p style="margin-top: 8px;">Instagram: <a href="https://instagram.com/luanazen" target="_blank"><span>@luanazen</span></a></p>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // ===========================
+        // IMAGENS DOS PRODUTOS
+        // Mapeia ID → imagem (mantém o carrinho leve no localStorage)
+        // ===========================
+        const productImages = {
+            'ebook-hipertrofia': 'images/ebook1.jpg',
+            'ebook-receitas': 'images/ebook2.jpg',
+            'ebook-nutricao': 'images/ebook3.jpg'
+        };
+
+        // ===========================
+        // RENDER DO CARRINHO
+        // ===========================
+        function formatPrice(value) {
+            return value.toFixed(2).replace('.', ',') + '€';
+        }
+
+        function renderCart() {
+            const cart = getCart();
+            const emptyEl = document.getElementById('cart-empty');
+            const contentEl = document.getElementById('cart-content');
+            const listEl = document.getElementById('cart-items-list');
+            const lang = localStorage.getItem('lang') || 'pt';
+
+            if (cart.length === 0) {
+                emptyEl.style.display = 'block';
+                contentEl.style.display = 'none';
+                return;
+            }
+
+            emptyEl.style.display = 'none';
+            contentEl.style.display = 'grid';
+            listEl.innerHTML = '';
+
+            cart.forEach(item => {
+                const img = productImages[item.id] || 'images/ebook1.jpg';
+                const subtotal = formatPrice(item.price * item.qty);
+                const unitPriceLabel = lang === 'en' ? 'each' : 'cada';
+                const unitPrice = formatPrice(item.price);
+
+                const row = document.createElement('div');
+                row.className = 'cart-item';
+                row.innerHTML = `
+                    <img class="cart-item-img" src="${img}" alt="${item.name}">
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>${unitPrice} ${unitPriceLabel}</p>
+                    </div>
+                    <div class="cart-item-qty">
+                        <button class="qty-btn" data-action="dec" data-id="${item.id}" aria-label="Diminuir">−</button>
+                        <span class="qty-value">${item.qty}</span>
+                        <button class="qty-btn" data-action="inc" data-id="${item.id}" aria-label="Aumentar">+</button>
+                    </div>
+                    <span class="cart-item-price">${subtotal}</span>
+                    <button class="cart-item-remove" data-id="${item.id}" aria-label="Remover">&times;</button>
+                `;
+                listEl.appendChild(row);
+            });
+
+            // Atualiza totais
+            const total = getCartTotal();
+            document.getElementById('summary-subtotal').textContent = formatPrice(total);
+            document.getElementById('summary-total').textContent = formatPrice(total);
+
+            // Liga os botões dinâmicos
+            listEl.querySelectorAll('.qty-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = this.dataset.id;
+                    const action = this.dataset.action;
+                    const item = getCart().find(i => i.id === id);
+                    if (!item) return;
+                    const newQty = action === 'inc' ? item.qty + 1 : item.qty - 1;
+                    if (newQty <= 0) {
+                        removeFromCart(id);
+                    } else {
+                        updateQty(id, newQty);
+                    }
+                });
+            });
+
+            listEl.querySelectorAll('.cart-item-remove').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    removeFromCart(this.dataset.id);
+                });
+            });
+        }
+
+        // ===========================
+        // CHECKOUT
+        // ===========================
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            const lang = localStorage.getItem('lang') || 'pt';
+            const name = document.getElementById('customer-name').value.trim();
+            const email = document.getElementById('customer-email').value.trim();
+            const phone = document.getElementById('customer-phone').value.trim();
+
+            if (!name || !email) {
+                alert(lang === 'en'
+                    ? 'Please fill in your name and email.'
+                    : 'Por favor, preencha o seu nome e email.');
+                return;
+            }
+
+            // Validação simples de email
+            const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            if (!emailOk) {
+                alert(lang === 'en'
+                    ? 'Please enter a valid email.'
+                    : 'Por favor, insira um email válido.');
+                return;
+            }
+
+            checkoutWhatsApp({ name, email, phone });
+        });
+
+        // ===========================
+        // IDIOMA
+        // ===========================
+        function toggleLang() {
+            const btn = document.getElementById('lang-btn');
+            const lang = btn.innerText === 'EN' ? 'en' : 'pt';
+
+            document.querySelectorAll('[data-pt]').forEach(el => {
+                el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.pt;
+            });
+
+            document.querySelectorAll('[data-pt-placeholder]').forEach(el => {
+                el.placeholder = lang === 'en' ? el.dataset.enPlaceholder : el.dataset.ptPlaceholder;
+            });
+
+            btn.innerText = lang === 'en' ? 'PT' : 'EN';
+            localStorage.setItem('lang', lang);
+            renderCart();
+        }
+
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang === 'en') toggleLang();
+
+        // Renderiza ao carregar
+        renderCart();
+    </script>
+
+</body>
+</html>

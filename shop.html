@@ -22,6 +22,10 @@
                 <a href="services.html" data-pt="Serviços" data-en="Services">Serviços</a>
                 <a href="shop.html" data-pt="Loja" data-en="Shop">Loja</a>
                 <a href="contact.html" data-pt="Contato" data-en="Contact">Contato</a>
+                <a href="cart.html" class="cart-link" title="Carrinho" aria-label="Carrinho">
+                    &#128722;
+                    <span class="cart-badge">0</span>
+                </a>
                 <button id="lang-btn" onclick="toggleLang()">EN</button>
             </nav>
         </div>
@@ -40,11 +44,11 @@
         <div class="wrapper">
             <div class="section-title">
                 <h2 data-pt="Produtos Digitais" data-en="Digital Products">Produtos Digitais</h2>
-                <p data-pt="Acesso imediato após a compra" data-en="Immediate access after purchase">Acesso imediato após a compra</p>
+                <p data-pt="Acesso imediato após a confirmação do pagamento" data-en="Immediate access after payment confirmation">Acesso imediato após a confirmação do pagamento</p>
             </div>
             <div class="cards-grid">
 
-                <div class="card shop-card">
+                <div class="card shop-card" data-id="ebook-hipertrofia" data-name="Guia de Hipertrofia" data-price="19.90">
                     <div class="shop-card-img">
                         <img src="images/ebook1.jpg" alt="Ebook Guia de Hipertrofia - FitPro Wellness">
                     </div>
@@ -53,11 +57,11 @@
                         <h3 data-pt="Guia de Hipertrofia" data-en="Hypertrophy Guide">Guia de Hipertrofia</h3>
                         <p data-pt="Tudo o que precisa saber para ganhar massa muscular com ciência e estratégia." data-en="Everything you need to know to build muscle mass with science and strategy.">Tudo o que precisa saber para ganhar massa muscular com ciência e estratégia.</p>
                         <p class="price">19,90€</p>
-                        <a href="contact.html" class="btn" data-pt="Comprar Agora" data-en="Buy Now">Comprar Agora</a>
+                        <button class="btn add-to-cart-btn" data-pt="Adicionar ao Carrinho" data-en="Add to Cart">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <div class="card shop-card">
+                <div class="card shop-card" data-id="ebook-receitas" data-name="Receitas Fit" data-price="14.90">
                     <div class="shop-card-img">
                         <img src="images/ebook2.jpg" alt="Ebook Receitas Fit - FitPro Wellness">
                     </div>
@@ -66,11 +70,11 @@
                         <h3 data-pt="Receitas Fit" data-en="Fit Recipes">Receitas Fit</h3>
                         <p data-pt="50 receitas saudáveis e deliciosas para o dia a dia — fáceis e rápidas de preparar." data-en="50 healthy and delicious everyday recipes — easy and quick to prepare.">50 receitas saudáveis e deliciosas para o dia a dia — fáceis e rápidas de preparar.</p>
                         <p class="price">14,90€</p>
-                        <a href="contact.html" class="btn" data-pt="Comprar Agora" data-en="Buy Now">Comprar Agora</a>
+                        <button class="btn add-to-cart-btn" data-pt="Adicionar ao Carrinho" data-en="Add to Cart">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <div class="card shop-card">
+                <div class="card shop-card" data-id="ebook-nutricao" data-name="Nutrição Esportiva" data-price="24.90">
                     <div class="shop-card-img">
                         <img src="images/ebook3.jpg" alt="Ebook Nutrição Esportiva - FitPro Wellness">
                     </div>
@@ -79,7 +83,7 @@
                         <h3 data-pt="Nutrição Esportiva" data-en="Sports Nutrition">Nutrição Esportiva</h3>
                         <p data-pt="Guia completo de nutrição para atletas e praticantes de atividade física." data-en="Complete nutrition guide for athletes and fitness enthusiasts.">Guia completo de nutrição para atletas e praticantes de atividade física.</p>
                         <p class="price">24,90€</p>
-                        <a href="contact.html" class="btn" data-pt="Comprar Agora" data-en="Buy Now">Comprar Agora</a>
+                        <button class="btn add-to-cart-btn" data-pt="Adicionar ao Carrinho" data-en="Add to Cart">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
@@ -95,6 +99,7 @@
         </div>
     </footer>
 
+    <script src="js/cart.js"></script>
     <script src="js/main.js"></script>
     <script>
         function toggleLang() {
@@ -111,6 +116,17 @@
 
         const savedLang = localStorage.getItem('lang');
         if (savedLang === 'en') toggleLang();
+
+        // Liga os botões "Adicionar ao Carrinho" aos cards da loja
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = this.closest('.shop-card');
+                const id = card.dataset.id;
+                const name = card.dataset.name;
+                const price = card.dataset.price;
+                addToCart(id, name, price);
+            });
+        });
     </script>
 
 </body>

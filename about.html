@@ -22,6 +22,10 @@
                 <a href="services.html" data-pt="Serviços" data-en="Services">Serviços</a>
                 <a href="shop.html" data-pt="Loja" data-en="Shop">Loja</a>
                 <a href="contact.html" data-pt="Contato" data-en="Contact">Contato</a>
+                <a href="cart.html" class="cart-link" title="Carrinho" aria-label="Carrinho">
+                    &#128722;
+                    <span class="cart-badge">0</span>
+                </a>
                 <button id="lang-btn" onclick="toggleLang()">EN</button>
             </nav>
         </div>
@@ -95,6 +99,7 @@
         </div>
     </footer>
 
+    <script src="js/cart.js"></script>
     <script src="js/main.js"></script>
     <script>
         function toggleLang() {
